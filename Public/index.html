@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You, My Love ❤️</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='50' text-anchor='middle' dominant-baseline='middle'%3E❤️%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Lock Screen -->
+    <div id="lockScreen" class="centered lock-container">
+      <div class="glass card lock-card">
+        <div class="lock-icon">🔐</div>
+        <h2>Our Secret Love</h2>
+        <p class="subtitle">Enter our special Date to continue...</p>
+        <input type="password" id="passwordInput" placeholder="DDMMYY" />
+        <button class="btn-primary" onclick="checkPassword()">
+          Unlock My Heart
+        </button>
+        <p id="errorMsg"></p>
+      </div>
+    </div>
+    <canvas id="confettiCanvas"></canvas>
+    <div id="floatingHearts"></div>
+
+    <div id="mainContent">
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+
+      <!-- Hero Section -->
+      <section class="hero centered">
+        <div class="glass hero-card">
+          <div class="hearts-animation">💕</div>
+          <h1>Happy Valentine's Day</h1>
+          <p class="subtitle-hero">To My One and Only</p>
+          <p id="countdown" class="countdown-text"></p>
+          <button class="btn-primary" onclick="scrollToLetter()">
+            💌 Read My Letter
+          </button>
+        </div>
+      </section>
+
+      <!-- Love Letter Section -->
+      <section id="letter" class="section letter-section">
+        <div class="glass card letter-card">
+          <h2>📝 My Love Letter</h2>
+          <p id="typingText" class="typing-text"></p>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="section timeline-section">
+        <div class="glass card">
+          <h2>💑 Our Journey Together</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>February 9, 2024</h3>
+                <p>
+                  The day you became my forever person. Our first monthsary, and
+                  every day since has been a blessing.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>September 2024</h3>
+                <p>
+                  Through stress, work pressure, and personal battles, you
+                  stayed. You became my peace when everything felt heavy.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>October 5, 2024</h3>
+                <p>
+                  A small scare that reminded me how much you matter to me. I
+                  realized even more that I want to protect and take care of you
+                  always.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Every Late-Night Call</h3>
+                <p>
+                  Random kwentos, kulit moments, deep talks about life, dreams,
+                  and our future wedding plans with 200 guests.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>February 9, 2025</h3>
+                <p>
+                  Our anniversary. Another year stronger, wiser, and more in
+                  love than ever before.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Every 9th of the Month</h3>
+                <p>
+                  We celebrate another month of love, laughs, and endless
+                  moments that make my heart skip a beat.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>February 9, 2026</h3>
+                <p>
+                  Two beautiful years together. And this is only the beginning.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Today, February 14th</h3>
+                <p>
+                  Valentine's Day with you. Still choosing you, still loving
+                  you, and forever grateful for your love.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>The Future</h3>
+                <p>
+                  Building our home. Growing together. Choosing each other every
+                  single day. Forever.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="section gallery-section">
+        <div class="glass card">
+          <h2>🖼️ Our Beautiful Moments</h2>
+          <p class="gallery-subtitle">Swipe or use buttons to view</p>
+          <div class="slider-container">
+            <div class="slider">
+              <img
+                src="images/photo-1.jpg"
+                class="slide active"
+                alt="Our memory 1"
+              />
+              <img src="images/photo-2.jpg" class="slide" alt="Our memory 2" />
+              <img src="images/photo-3.jpg" class="slide" alt="Our memory 3" />
+              <img src="images/photo-4.jpg" class="slide" alt="Our memory 4" />
+              <img src="images/photo-5.jpg" class="slide" alt="Our memory 5" />
+              <img src="images/photo-6.jpg" class="slide" alt="Our memory 6" />
+            </div>
+            <div class="slide-counter">
+              <span id="slideNumber">1</span> / <span id="totalSlides">6</span>
+            </div>
+            <div class="slide-dots" id="dotsContainer">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+              <span class="dot" onclick="goToSlide(5)"></span>
+            </div>
+          </div>
+          <div class="controls">
+            <button class="btn-control" onclick="prevSlide()">
+              ❮ Previous
+            </button>
+            <button class="btn-control" onclick="nextSlide()">Next ❯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reasons Section -->
+      <section class="section reasons-section">
+        <div class="glass card">
+          <h2>💝 Why I Love You</h2>
+          <div class="reasons-grid">
+            <div class="reason-card">
+              <span class="reason-icon">😊</span>
+              <p>Your smile brightens even my darkest days</p>
+            </div>
+            <div class="reason-card">
+              <span class="reason-icon">💪</span>
+              <p>Your strength inspires me to be better</p>
+            </div>
+            <div class="reason-card">
+              <span class="reason-icon">🎵</span>
+              <p>Your laughter is my favorite sound</p>
+            </div>
+            <div class="reason-card">
+              <span class="reason-icon">🤗</span>
+              <p>Your presence makes me feel at home</p>
+            </div>
+            <div class="reason-card">
+              <span class="reason-icon">💬</span>
+              <p>Your words heal my soul</p>
+            </div>
+            <div class="reason-card">
+              <span class="reason-icon">🌟</span>
+              <p>You are my everything and my forever</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Message -->
+      <section class="section final-section">
+        <div class="glass card">
+          <h2>❤️ Forever Yours</h2>
+          <p class="final-message">
+            Thank you for being my greatest adventure.
+          </p>
+          <button class="btn-primary" onclick="createHearts()">
+            Make It Rain Hearts 💕
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Made with 💕 for someone special</p>
+        <p class="footer-date">Valentine's Day 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
