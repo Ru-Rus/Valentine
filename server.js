@@ -8,11 +8,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+
+// Serve static files from Public folder
+const publicPath = path.join(__dirname, "Public");
+app.use(express.static(publicPath));
 
 // Root route - serve index.html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(publicPath, "index.html"));
 });
 
 // API to unlock and get letter
