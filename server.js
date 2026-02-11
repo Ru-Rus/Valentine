@@ -10,6 +10,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Root route - serve index.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 // API to unlock and get letter
 app.post("/api/unlock", (req, res) => {
     const { password } = req.body;
